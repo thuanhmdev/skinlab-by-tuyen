@@ -186,7 +186,7 @@ CREATE TABLE `settings` (
 
 LOCK TABLES `settings` WRITE;
 /*!40000 ALTER TABLE `settings` DISABLE KEYS */;
-INSERT INTO `settings` VALUES ('setting','Bạn muốn tìm hiểu về các bí quyết làm đẹp tự nhiên? Hãy ghé thăm blog của tôi!','thuanhmresearch@gmail.com','https://www.facebook.com/100006900795338','https://www.facebook.com/61551133326547','','https://m.me/61551133326547/','KimTuyen Blog','Trang chủ','');
+INSERT INTO `settings` VALUES ('setting','Bạn muốn tìm hiểu về các bí quyết làm đẹp tự nhiên? Hãy ghé thăm blog của tôi!','hakimtuyen997@gmail.com','https://www.facebook.com/100006900795338','https://www.facebook.com/61551133326547','','https://m.me/61551133326547/','Skinlab By Tuyen','Trang chủ','');
 /*!40000 ALTER TABLE `settings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -219,7 +219,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('4dbfff42-4dfd-4ae0-a527-5fe5f098a968','/avatar/default_user.png','ADMIN','$2a$10$YuqJgJyzPZbMpz9GR8i.LOZ/AZwYRLSta/sAugzoUGJpb3DD4fsUO','SYSTEM','eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcyNzcwNDI0NywiaWF0IjoxNzI3NjE3ODQ3LCJ1c2VyIjp7ImlkIjoiNGRiZmZmNDItNGRmZC00YWUwLWE1MjctNWZlNWYwOThhOTY4IiwidXNlcm5hbWUiOiJhZG1pbiIsIm5hbWUiOiJBRE1JTiIsImltYWdlIjoiL2F2YXRhci9kZWZhdWx0X3VzZXIucG5nIiwicm9sZSI6eyJpZCI6IkFETUlOIiwibmFtZSI6IkFETUlOIn0sInByb3ZpZGVyIjoiU1lTVEVNIn19.TSewTuTlZVogfdQ6D33GfXIe5h0NQEl1DWu5Zn5EYrCqnT19v5VO_1rR50WxiO1K_4b9Gp_uHdZIWGk8E-mNZw','admin','ADMIN',NULL);
+INSERT INTO `users` VALUES ('4dbfff42-4dfd-4ae0-a527-5fe5f098a968','/avatar/default_user.jpg','Mr. Hà Kim Tuyền','$2a$10$YuqJgJyzPZbMpz9GR8i.LOZ/AZwYRLSta/sAugzoUGJpb3DD4fsUO','SYSTEM','eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcyNzcwNDI0NywiaWF0IjoxNzI3NjE3ODQ3LCJ1c2VyIjp7ImlkIjoiNGRiZmZmNDItNGRmZC00YWUwLWE1MjctNWZlNWYwOThhOTY4IiwidXNlcm5hbWUiOiJhZG1pbiIsIm5hbWUiOiJBRE1JTiIsImltYWdlIjoiL2F2YXRhci9kZWZhdWx0X3VzZXIucG5nIiwicm9sZSI6eyJpZCI6IkFETUlOIiwibmFtZSI6IkFETUlOIn0sInByb3ZpZGVyIjoiU1lTVEVNIn19.TSewTuTlZVogfdQ6D33GfXIe5h0NQEl1DWu5Zn5EYrCqnT19v5VO_1rR50WxiO1K_4b9Gp_uHdZIWGk8E-mNZw','admin','ADMIN',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
