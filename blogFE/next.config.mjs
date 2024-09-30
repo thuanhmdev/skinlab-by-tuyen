@@ -8,6 +8,12 @@ const nextConfig = {
         pathname: "/**",
       },
       {
+        protocol: "https",
+        hostname: "skinlabbytuyen.io.vn",
+        port: "443",
+        pathname: "/**",
+      },
+      {
         protocol: "http",
         hostname: "localhost",
         port: "8080",
