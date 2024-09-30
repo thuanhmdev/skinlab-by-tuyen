@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bạn có một bình luận mới</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        .header {
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .content {
+            padding: 20px 0;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+        }
+        .comment-content {
+            background-color: #f9f9f9;
+            border-left: 4px solid #ddd;
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td class="header">
+            <h1>Bạn có một bình luận mới</h1>
+        </td>
+    </tr>
+    <tr>
+        <td class="content">
+            <p>Xin chào <b th:text="${context.userName}"></b>,</p>
+            <p>Bạn có một một bình luận/phản hồi mới.</p>
+            <table border="0"  cellspacing="0" width="100%">
+                <tr>
+                    <td><strong>Tiêu đề bài viết: </strong> <span th:text="${context.blog.title}">[Tiêu đề bài viết]</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Người bình luận: </strong><span th:text="${context.commenterName}">[Tên người bình luận]</span></td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Nội dung bình luận:</strong>
+                        <div>
+                            <div class="comment-content" th:text="${context.content}">
+                                [Nội dung bình luận]
+                            </div>
+                        </div>
+                    </td>
+
+                </tr>
+            </table>
+            <p>Để xem và trả lời bình luận, vui lòng nhấp vào liên kết dưới đây:</p>
+            <p><a th:href="@{context.blogUrl}">Xem bình luận</a></p>
+        </td>
+    </tr>
+    <tr>
+        <td class="footer">
+            <p>Email này được gửi tự động. Vui lòng không trả lời.</p>
+            <p>&copy;<span th:text="${context.siteName}">ThuanHM</span>.</p>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,79 @@
+services:
+  
+  nginx:
+    container_name: nginx
+    image: nginx:1.27
+    depends_on:
+      - frontend-nextjs
+      - backend-springboot
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      # - ./ssl:/ssl
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+
+  certbot:
+      image: certbot/certbot
+      container_name: certbot
+      volumes: 
+        - ./certbot/conf:/etc/letsencrypt
+        - ./certbot/www:/var/www/certbot
+      command: certonly --webroot -w /var/www/certbot --force-renewal --email helloworld@gmail.com -d pgnt.xyz --agree-tos
+
+  mysqldb:
+    image: mysql:8.0-debian
+    restart: unless-stopped
+    container_name: my-sqldb
+    volumes:
+      - ./initDB.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - MYSQL_ROOT_PASSWORD=121212
+      - MYSQL_DATABASE=blogapp
+    ports:
+      - 3307:3306
+
+
+  backend-springboot:
+    depends_on:
+      - mysqldb
+    restart: unless-stopped
+    container_name: my-backend
+    build:
+      context: ./blogBE
+      dockerfile: Dockerfile
+    volumes:
+      - ./blogStorageBackup/:/blogStorage/
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysqldb:3306/blogapp
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=121212
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT=org.hibernate.dialect.MySQLDialect
+      - APP_UPLOAD_FILE_BASE_URI=file:///blogStorage/
+      - APP_JWT_JWT_SECRET_KEY=5PoCRe5d1LkTQCFxE5BugJBXcdpJ7BPrKAy5iQva+v+GEHNkswcNL4zASNSxNGFC8ZyfU/w6NIbYzIGXWsWdxw==
+      - APP_JWT_JWT_VALIDITY_IN_SECONDS=1800
+      - APP_JWT_REFRESH_TOKEN_VALIDITY_IN_SECONDS=86400
+      - SPRING_MAIL_HOST=smtp.gmail.com
+      - SPRING_MAIL_PORT=587
+      - SPRING_MAIL_USERNAME=app.worker365@gmail.com
+      - SPRING_MAIL_PASSWORD=thdhslkjfqzkmjrj
+      - SPRING_MAIL_PROPERTIES_MAIL_SMTP_STARTTLS_ENABLE=true
+      - SPRING_MAIL_PROPERTIES_MAIL_SMTP_AUTH=true
+    links:
+      - mysqldb
+    expose:
+      - "8080"
+    ports:
+      - 8081:8080
+  frontend-nextjs:
+    container_name: my-frontend
+    depends_on:
+      - backend-springboot
+    build:
+      context: ./blogFE
+      dockerfile: Dockerfile
+    restart: unless-stopped
+  
