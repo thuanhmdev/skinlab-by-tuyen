@@ -11,8 +11,8 @@ const Footer = async () => {
   return (
     <>
       <footer id="footer" className="bg-gray-100 py-6">
-        <div className="container flex justify-between">
-          <p className="text-black text-sm text-center mt-4">
+        <div className="container flex flex-col-reverse gap-y-2 md:flex-row md:justify-between items-center">
+          <p className="text-black text-sm md:text-sm text-center">
             Copyright © {new Date().getFullYear()}, {setting.data.siteName}
           </p>
           <div className="flex justify-between">
@@ -52,7 +52,9 @@ const Footer = async () => {
               </li>
             </ul>
           </div>
-          <ScrollTop />
+          <div>
+            <ScrollTop />
+          </div>
         </div>
       </footer>
     </>
