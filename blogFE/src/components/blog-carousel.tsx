@@ -54,7 +54,7 @@ const BlogCarousel = ({ blogs = [] }: IProps) => {
   };
 
   const convertTimeStampeToDate = (timeStampDate: number) => {
-    return dayjs(timeStampDate).format("MMM D, YYYY h:mm A");
+    return dayjs(timeStampDate).format("DD/MM/YYYY h:mm A");
   };
 
   const handleNavigate = (blog: TBlog) => {

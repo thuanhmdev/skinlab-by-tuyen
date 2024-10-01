@@ -52,7 +52,7 @@ const HomePage = async ({
                       className="flex gap-3 md:gap-4 2xl:gap-5 cursor-pointer transition duration-300 hover:-translate-y-[2px]  hover:scale-[101%] hover:shadow-md"
                     >
                       <div className="">
-                        <div className="child relative group-hover:scale(1.2) bg-center bg-cover bg-no-repeat w-[125px] h-[112px] sm:w-[170px] sm:h-[135px] md:w-[220px] md:h-[180px] lg:w-[260px] lg:h-[190px] xl:w-[280px] xl:h-[200px] rounded-2xl overflow-hidden">
+                        <div className="child relative group-hover:scale(1.2) bg-center bg-cover bg-no-repeat w-[125px] h-[112px] sm:w-[170px] sm:h-[135px] md:w-[220px] md:h-[180px] lg:w-[240px] lg:h-[190px] xl:w-[260px] xl:h-[200px] rounded-2xl overflow-hidden">
                           (
                           <Image
                             src={

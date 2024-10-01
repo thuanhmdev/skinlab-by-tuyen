@@ -91,7 +91,7 @@ const page = async ({ params }: any) => {
               <h1 className="text-2xl md:text-3xl  xl:text-4xl font-bold">
                 {blog?.data.title}
               </h1>
-              <div className="flex items-center pt-5 justify-between mb-1">
+              <div className="flex flex-wrap gap-y-1 items-center pt-5 justify-between mb-1">
                 <Avatar user={blog.data.blogger} />
                 <p className="text-xs block md:inline">
                   Ngày đăng: <DateFormat date={blog.data.createdAt} />
