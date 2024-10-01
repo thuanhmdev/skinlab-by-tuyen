@@ -20,7 +20,7 @@ services:
       volumes: 
         - ./certbot/conf:/etc/letsencrypt
         - ./certbot/www:/var/www/certbot
-      command: certonly --webroot -w /var/www/certbot --force-renewal --email helloworld@gmail.com -d pgnt.xyz --agree-tos
+      command: certonly --webroot -w /var/www/certbot --force-renewal --email thuanhmdev@gmail.com -d skinlabbytuyen.io.vn --agree-tos
 
   mysqldb:
     image: mysql:8.0-debian
