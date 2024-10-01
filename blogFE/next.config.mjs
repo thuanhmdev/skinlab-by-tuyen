@@ -15,6 +15,11 @@ const nextConfig = {
       },
       {
         protocol: "http",
+        hostname: "skinlabbytuyen.io.vn",
+        pathname: "/**",
+      },
+      {
+        protocol: "http",
         hostname: "localhost",
         port: "8080",
         pathname: "/**",
