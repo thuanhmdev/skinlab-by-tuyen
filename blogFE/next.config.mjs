@@ -4,7 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "http",
-        hostname: "160.30.45.140",
+        hostname: "103.167.89.154",
         pathname: "/**",
       },
       {

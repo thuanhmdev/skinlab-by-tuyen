@@ -14,13 +14,13 @@ services:
       - ./certbot/www:/var/www/certbot
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
 
-  certbot:
-      image: certbot/certbot
-      container_name: certbot
-      volumes: 
-        - ./certbot/conf:/etc/letsencrypt
-        - ./certbot/www:/var/www/certbot
-      command: certonly --webroot -w /var/www/certbot --force-renewal --email thuanhmdev@gmail.com -d skinlabbytuyen.io.vn --agree-tos
+  # certbot:
+  #     image: certbot/certbot
+  #     container_name: certbot
+  #     volumes: 
+  #       - ./certbot/conf:/etc/letsencrypt
+  #       - ./certbot/www:/var/www/certbot
+  #     command: certonly --webroot -w /var/www/certbot --force-renewal --email thuanhmdev@gmail.com -d skinlabbytuyen.io.vn --agree-tos
 
   mysqldb:
     image: mysql:8.0-debian

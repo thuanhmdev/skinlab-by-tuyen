@@ -16,7 +16,7 @@ public class CorsConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("https://skinlabbytuyen.io.vn", "http://skinlabbytuyen.io.vn", "http://160.30.45.140", "http://localhost:3000", "http://host.docker.internal", "http://localhost"));
+        configuration.setAllowedOrigins(Arrays.asList("https://skinlabbytuyen.io.vn", "http://skinlabbytuyen.io.vn", "http://103.167.89.154", "http://localhost:3000", "http://host.docker.internal", "http://localhost"));
 //        configuration.setAllowedOrigins(List.of("*"));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type", "Accept", "x-no-retry"));
