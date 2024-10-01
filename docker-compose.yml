@@ -3,6 +3,7 @@ services:
   nginx:
     container_name: nginx
     image: nginx:1.27
+    restart: unless-stopped
     depends_on:
       - frontend-nextjs
       - backend-springboot
