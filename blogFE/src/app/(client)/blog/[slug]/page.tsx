@@ -87,7 +87,7 @@ const page = async ({ params }: any) => {
       {blog.data ? (
         <>
           <div className="grid grid-cols-3 relative gap-x-8">
-            <div className="col-span-2">
+            <div className="col-span-3 xl:col-span-2">
               <h1 className="text-2xl md:text-3xl  xl:text-4xl font-bold">
                 {blog?.data.title}
               </h1>
@@ -106,7 +106,7 @@ const page = async ({ params }: any) => {
               <div className="w-full h-[1px] bg-blue-500"></div>
               <Comment blogData={blog.data} />
             </div>
-            <div>
+            <div className="hidden xl:block xl:col-span-1">
               <div className="sticky top-[80px]">
                 <h2 className="font-bold">Các bài viết gần đây</h2>
                 <ul className="mt-4 space-y-2">

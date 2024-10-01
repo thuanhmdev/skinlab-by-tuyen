@@ -9,7 +9,7 @@ import useMounted from "@/hooks/use-mounted";
 const DateFormat = ({ date }: { date: number }) => {
   const hasMounted = useMounted();
   return hasMounted ? (
-    <i className="block text-[12px]">
+    <i className="block text-[8px] md:text-xs">
       {`${dayjs(date).locale("vi").format("DD/MM/YYYY h:mm A")} (${dayjs(
         dayjs(date).locale("vi")
       ).fromNow()})`}
