@@ -14,6 +14,6 @@ crontab renew ssl, reload nginx, backup database
 remove container and images docker:
 
 <!--
-docker stop $(docker ps -af)
+docker stop $(docker ps -aq)
 docker system prune -af
 -->
