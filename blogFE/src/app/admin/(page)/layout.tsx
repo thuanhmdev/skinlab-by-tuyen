@@ -3,11 +3,10 @@ import Sidebar from "@/components/sidebar";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import AuthAdmin from "./auth-admin";
-import { Metadata } from "next";
 
 const AdminLayout = async ({ children }: { children: React.ReactNode }) => {
   const session = await getServerSession(authOptions);
-  if (!session) {
+  if (!session || session.user.role.name != "ADMIN") {
     redirect("/admin/login");
   }
 

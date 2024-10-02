@@ -1,12 +1,12 @@
-Khởi động lại Nginx để áp dụng cấu hình mới:
-Lệnh: docker-compose exec nginx nginx -s reload
+Lệnh chạy docker: docker compose -p thuanhm up -d
 
-Automated renewal SSL with crontab:
-Lệnh 1: crontab -e
-Lệnh 2: 0 5 1 _/2 _ /usr/bin/docker compose -f /var/docker/docker-compose.yml up certbot
+Automated with crontab:
+Lệnh: crontab -e
 
-0: Phút 0
-5: Giờ thứ 5 (5 giờ sáng)
-1: Ngày 1 của tháng
-_/2: Cứ mỗi 2 tháng
-_: Bất kỳ ngày nào trong tuần
+crontab renew ssl, reload nginx, backup database
+
+<!--
+0 0 1 * * docker compose -f /skinlab-by-tuyen/docker-compose.yml -p thuanhm up certbot
+0 0 1 * * docker compose -f /skinlab-by-tuyen/docker-compose.yml -p thuanhm restart nginx
+0 0 * * * sudo docker compose -p thuanhm exec mysqldb /usr/bin/mysqldump -u root --password=121212 blogapp > ~/backupMySQL/mysql_backup.sql
+-->

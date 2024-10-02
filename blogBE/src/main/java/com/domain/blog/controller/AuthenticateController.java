@@ -146,6 +146,7 @@ public class AuthenticateController {
             newUser.setProvider(loginSocialMediaDTO.getProvider());
             newUser.setRole(this.roleService.findByName("USER"));
             newUser.setPassword(String.valueOf(System.currentTimeMillis()));
+            newUser.setImageProvider(loginSocialMediaDTO.getImageProvider());
             userWithSocialMedia = this.userService.createUser(newUser);
         }
         ResponseLoginDTO responseLoginDTO = new ResponseLoginDTO();

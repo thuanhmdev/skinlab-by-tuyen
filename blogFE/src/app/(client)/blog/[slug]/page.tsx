@@ -92,9 +92,18 @@ const page = async ({ params }: any) => {
                 {blog?.data.title}
               </h1>
               <div className="flex flex-wrap gap-y-1 items-center pt-5 justify-between mb-1">
-                <Avatar user={blog.data.blogger} />
-                <p className="text-xs block md:inline">
-                  Ngày đăng: <DateFormat date={blog.data.createdAt} />
+                <Avatar
+                  user={blog.data.blogger}
+                  classNameAvatar="w-[40px] h-[40px] xl:w-[48px] xl:h-[48px]"
+                  classNameTextAvatar="text-xs md:text-sm xl:text-base"
+                  hiddenBadge
+                />
+                <p className="text-[12px] block md:inline">
+                  Ngày đăng:{" "}
+                  <DateFormat
+                    date={blog.data.createdAt}
+                    classNameCustom="text-[10px] md:text-sm"
+                  />
                 </p>
               </div>
               <ShareSocialMedia title={blog.data.title} />

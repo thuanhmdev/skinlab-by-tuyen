@@ -41,7 +41,7 @@ const HomePage = async ({
           <div className="relative">
             <div className="grid 2xl:grid-cols-12 2xl:gap-x-10 ">
               <div className="2xl:col-span-9 space-y-4 2xl:space-y-6">
-                <h2 className="text-md d:text-xl lg:text-2xl xl:text-3xl font-bold mb-0 mt-4 lg:mt-8">
+                <h2 className="text-base sm:text-[18px] md:text-xl lg:text-2xl xl:text-3xl font-bold mb-0 mt-4 lg:mt-8">
                   Danh sách bài viết
                 </h2>
                 <Suspense fallback={<Loading />}>

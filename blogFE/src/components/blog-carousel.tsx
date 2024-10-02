@@ -65,7 +65,7 @@ const BlogCarousel = ({ blogs = [] }: IProps) => {
     <div className="overflow-hidden rounded-lg">
       {blogs.length === 1 ? (
         <div>
-          <div className="relative w-full h-[300px] p-2  bg-center bg-no-repeat bg-cover">
+          <div className="relative w-full h-[150px] sm:h-[200px] md:h-[250px] lg:md:h-[300px] p-2  bg-center bg-no-repeat bg-cover">
             <Image
               src="/images/blog_caurousel.jpg"
               alt="Blog Image"
@@ -75,13 +75,13 @@ const BlogCarousel = ({ blogs = [] }: IProps) => {
             <div className="absolute inset-0 bg-neutral-800/45"></div>
             <div className="relative z-1 h-full flex flex-col justify-center items-center gap-y-3 ">
               <h3
-                className="text-xl lg:text-2xl xl:text-3xl text-white font-bold cursor-pointer"
+                className="text-base md:text-xl lg:text-2xl xl:text-3xl text-white font-bold cursor-pointer"
                 onClick={() => handleNavigate(blogs?.[0])}
               >
                 {blogs?.[0].title ?? ""}
               </h3>
               <div className="flex flex-col items-center gap-y-2">
-                <p className="mb-0 text-white">
+                <p className="mb-0 text-white text-[10px] sm:text-[12px] md:text-sm lg:text-base">
                   Ngày đăng:{" "}
                   {hasMounted && convertTimeStampeToDate(blogs?.[0].createdAt)}
                 </p>
@@ -94,7 +94,7 @@ const BlogCarousel = ({ blogs = [] }: IProps) => {
           {blogs.map((item: TBlog) => (
             <React.Fragment key={item.id}>
               <div>
-                <div className="relative w-full h-[300px] p-2  bg-center bg-no-repeat bg-cover">
+                <div className="relative w-full h-[150px] sm:h-[200px] md:h-[250px] lg:md:h-[300px] p-2  bg-center bg-no-repeat bg-cover">
                   <Image
                     src="/images/blog_caurousel.jpg"
                     alt="Blog Image"
@@ -104,7 +104,7 @@ const BlogCarousel = ({ blogs = [] }: IProps) => {
                   <div className="absolute inset-0 bg-neutral-800/45"></div>
                   <div className="relative z-1 h-full flex flex-col justify-center items-center gap-y-3 ">
                     <h3
-                      className="text-xl lg:text-2xl xl:text-3xl text-white font-bold cursor-pointer"
+                      className="text-base md:text-xl lg:text-2xl xl:text-3xl text-white font-bold cursor-pointer"
                       onClick={() => handleNavigate(item)}
                     >
                       {item.title ?? ""}
@@ -113,7 +113,7 @@ const BlogCarousel = ({ blogs = [] }: IProps) => {
                       <p className="mb-0 text-white">
                         {item.blogger.name ?? ""}
                       </p>
-                      <p className="mb-0 text-white">
+                      <p className="mb-0 text-white text-[10px] sm:text-[12px] md:text-sm lg:text-base">
                         Ngày đăng:{" "}
                         {hasMounted && convertTimeStampeToDate(item.createdAt)}
                       </p>

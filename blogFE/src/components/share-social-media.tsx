@@ -21,7 +21,7 @@ const ShareSocialMedia = ({ title }: Iprops) => {
   }, []);
 
   return (
-    <div>
+    <div className="space-y-1">
       <p className="text-sm">Chia sẻ:</p>
       <div className="flex items-center  gap-x-2">
         <FacebookShareButton url={url} quote={title}>
