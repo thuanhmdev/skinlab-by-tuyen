@@ -58,7 +58,7 @@ const Comment = ({ blogData }: { blogData: TBlog }) => {
         user: { id: session?.user.id },
         rootId: "",
         replyToUser: { id: blogData.blogger.id },
-        urlBlog: (window as Window).location.href,
+        blogUrl: (window as Window).location.href,
       },
       typeComponent: "CSR",
     });
@@ -86,7 +86,7 @@ const Comment = ({ blogData }: { blogData: TBlog }) => {
         user: { id: session?.user.id },
         rootId: writeAnswerComment.rootId ?? "",
         replyToUser: writeAnswerComment.replyToUser,
-        urlBlog: (window as Window).location.href,
+        blogUrl: (window as Window).location.href,
       },
       typeComponent: "CSR",
     });

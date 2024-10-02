@@ -49,7 +49,7 @@ public class CommentService {
         if(commentCreateDTO.getRootId() == null || commentCreateDTO.getRootId().isEmpty()){
             User replyToUser = this.userService.getUserById(commentCreateDTO.getUser().getId());
             if(!replyToUser.getRole().equals(ADMIN)){
-                MailCommentDTO mailCommentDTO = new MailCommentDTO("Admin", commenter.getName(), commentCreateDTO.getContent(), blog, commentCreateDTO.getUrlBlog(), siteName);
+                MailCommentDTO mailCommentDTO = new MailCommentDTO("Admin", commenter.getName(), commentCreateDTO.getContent(), blog, commentCreateDTO.getBlogUrl(), siteName);
                 this.emailService.sendEmailFromTemplateSync(emailAdmin, "Bạn có một bình luận mới", "comment", mailCommentDTO);
             }
         } else{
@@ -62,8 +62,8 @@ public class CommentService {
             if(!userWriteComment.getRole().equals(ADMIN) && !replyToUser.getRole().equals(ADMIN)){
                 String email = replyToUser.getUsername();
 
-                MailCommentDTO mailReplyToUserDTO = new MailCommentDTO(replyToUser.getName(), commenter.getName(), commentCreateDTO.getContent(), blog, commentCreateDTO.getUrlBlog(), siteName);
-                MailCommentDTO mailReplyToAdminDTO = new MailCommentDTO("Admin", commenter.getName(), commentCreateDTO.getContent(), blog, commentCreateDTO.getUrlBlog(), siteName);
+                MailCommentDTO mailReplyToUserDTO = new MailCommentDTO(replyToUser.getName(), commenter.getName(), commentCreateDTO.getContent(), blog, commentCreateDTO.getBlogUrl(), siteName);
+                MailCommentDTO mailReplyToAdminDTO = new MailCommentDTO("Admin", commenter.getName(), commentCreateDTO.getContent(), blog, commentCreateDTO.getBlogUrl(), siteName);
 
 
                 this.emailService.sendEmailFromTemplateSync(email, "Bạn có một phản hồi mới", "comment", mailReplyToUserDTO);

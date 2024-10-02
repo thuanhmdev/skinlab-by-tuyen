@@ -14,5 +14,5 @@ public class CommentCreateDTO {
     private UserDTO user;
     private UserDTO replyToUser;
     private Blog blog;
-    private String urlBlog;
+    private String blogUrl;
 }
